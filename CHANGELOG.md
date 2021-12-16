@@ -2,6 +2,8 @@
 
 ## Main (unreleased)
 
+* Bundler 2.x is now 2.2.33 ()
+
 ## v233 (12/16/2021)
 
 * Default node version now 16.13.1, yarn is 1.22.17 (https://github.com/heroku/heroku-buildpack-ruby/pull/1238)
