@@ -64,7 +64,7 @@ class LanguagePack::Ruby < LanguagePack::Base
 
   def default_process_types
     {
-      "rake"    => "bundle exec rake",
+      "rake"    => "bin/qgtunnel bundle exec rake",
       "console" => "bundle exec irb"
     }
   end
@@ -784,10 +784,6 @@ BUNDLE
       bundle_command << "BUNDLE_BIN=#{ENV["BUNDLE_BIN"]} "
       bundle_command << "BUNDLE_DEPLOYMENT=#{ENV["BUNDLE_DEPLOYMENT"]} " if ENV["BUNDLE_DEPLOYMENT"] # Unset on windows since we delete the Gemfile.lock
       bundle_command << "BUNDLE_GLOBAL_PATH_APPENDS_RUBY_SCOPE=#{ENV["BUNDLE_GLOBAL_PATH_APPENDS_RUBY_SCOPE"]} " if bundler.needs_ruby_global_append_path?
-      
-      # for quotaguard
-      bundle_command << "bin/qgtunnel "
-      
       bundle_command << "bundle install -j4"
 
       topic("Installing dependencies using bundler #{bundler.version}")
