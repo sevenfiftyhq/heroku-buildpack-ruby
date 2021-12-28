@@ -64,7 +64,7 @@ class LanguagePack::Ruby < LanguagePack::Base
 
   def default_process_types
     {
-      "rake"    => "bin/qgtunnel bundle exec rake",
+      "rake"    => "bundle exec rake",
       "console" => "bundle exec irb"
     }
   end
